@@ -1,0 +1,5 @@
+# Ignorare cartella idea
+.idea/
+
+# Oscurare dati importanti
+.env
