@@ -9,17 +9,17 @@ from watchdog.events import FileSystemEventHandler
 
 
 # DIRECTORY DEI DOWNLOAD
-source_dir = "/Users/RAD/Downloads"
+source_dir = 'DOWNLOAD_DIR'
 # VARIE DIRECTORY PER TIPO CON CONTROLLO SE ESISTE O MENO (boolean type)
-dest_dir_sfx = "/Users/RAD/files/sfxs"
+dest_dir_sfx = 'SFX_DIR'
 check_dir_sfx = os.path.isdir(dest_dir_sfx)
-dest_dir_music = "/Users/RAD/files/musics"
+dest_dir_music = 'MUSIC_DIR'
 check_dir_music = os.path.isdir(dest_dir_music)
-dest_dir_video = "/Users/RAD/files/videos"
+dest_dir_video = 'VIDEO_DIR'
 check_dir_video = os.path.isdir(dest_dir_video)
-dest_dir_image = "/Users/RAD/files/images"
+dest_dir_image = 'IMAGE_DIR'
 check_dir_image = os.path.isdir(dest_dir_image)
-dest_dir_documents = "/Users/RAD/files/document"
+dest_dir_documents = 'DOCUMENT_DIR'
 check_dir_documents = os.path.isdir(dest_dir_documents)
 
 # TIPI DI ESTENSIONI PER TIPO
