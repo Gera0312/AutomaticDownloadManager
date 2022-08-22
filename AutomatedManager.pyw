@@ -56,7 +56,6 @@ def make_unique(dest, name):
     while exists(f"{dest}/{name}"):
         name = f"{filename}({str(counter)}){extension}"
         counter += 1
-
     return name
 
 # MUOVERE FILE DALLA DIRECTORY DEI DOWNLOAD A QUELLA APPOSITA
@@ -72,6 +71,7 @@ def control_extension(type, check, dest, name, entry):
     if name.endswith(type) or name.endswith(type.upper()):
         move_file(dir_exist(check, dest), entry, name)
         logging.info(f"Moved document file: {name}")
+
 
 # CLASSE ORCHESTRATRICE
 class MoverHandler(FileSystemEventHandler):
