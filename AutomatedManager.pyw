@@ -7,22 +7,22 @@ import logging
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 
-
+# SOSTITUIRE CON LE DIRECTORY DEI RELATIVI TIPI DI FILE
+# SE LE DIRECTORY DEI VARI FAIL NON ESISTONO TI CREA IN AUTOMATICO LE CARTELLE
 # DIRECTORY DEI DOWNLOAD
-source_dir = '/Users/RAD/Downloads'
+source_dir = 'DOWNLOADS_DIR'
 # VARIE DIRECTORY PER TIPO CON CONTROLLO SE ESISTE O MENO (boolean type)
-dest_dir_sfx = '/Users/RAD/files/sfxs'
+dest_dir_sfx = 'SFX_DIR'
 check_dir_sfx = os.path.isdir(dest_dir_sfx)
-dest_dir_music = '/Users/RAD/files/musics'
+dest_dir_music = 'MUSIC_DIR'
 check_dir_music = os.path.isdir(dest_dir_music)
-dest_dir_video = '/Users/RAD/files/videos'
+dest_dir_video = 'VIDEO_DIR'
 check_dir_video = os.path.isdir(dest_dir_video)
-dest_dir_image = '/Users/RAD/files/images'
+dest_dir_image = 'IMAGE_DIR'
 check_dir_image = os.path.isdir(dest_dir_image)
-dest_dir_documents = '/Users/RAD/files/documents'
+dest_dir_documents = 'DOCUMENT_DIR'
 check_dir_documents = os.path.isdir(dest_dir_documents)
 
-# os.environ['']
 
 # TIPI DI ESTENSIONI PER TIPO
 
@@ -95,8 +95,6 @@ class MoverHandler(FileSystemEventHandler):
                 move_file(dest, entry, name)
                 logging.info(f"Moved audio file: {name}")
 
-    #  CREATE FUNCTION FOR IDENTIFY TYPES PF FORMAT
-    # I REPEAT SOME THINGS IN THE PATH
     def check_video_files(self, entry, name):  # CHECKARE FILE VIDEO
         for video_extension in video_extensions:
             control_extension(video_extension, check_dir_video, dest_dir_video, name, entry)
